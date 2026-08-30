@@ -7,7 +7,8 @@ load_dotenv()
 
 agent = Agent(
     model=Groq(id="openai/gpt-oss-120b"),
-    tools=[TavilyTools()]
+    tools=[TavilyTools()],
+    debug_mode=True
 )
 
 agent.print_response("Use suas ferramentas para pesquisar a temperatura hoje em Recife")
