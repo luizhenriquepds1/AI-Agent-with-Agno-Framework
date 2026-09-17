@@ -1,5 +1,6 @@
 from agno.agent import Agent
-from agno.models.groq import Groq
+from agno.models.google import Gemini
+#from agno.models.groq import Groq
 #from agno.models.openai import OpenAIChat
 from dotenv import load_dotenv
 from agno.os import AgentOS
@@ -22,7 +23,8 @@ knowledge.insert(path="ENGENHARIA+DE+PROMPT.pdf")
 
 agent = Agent(
     name="Agente de PDF",
-    model=Groq(id="openai/gpt-oss-120b"),
+    model=Gemini(id="gemini-3.8-flash"),
+    #model=Groq(id="openai/gpt-oss-120b"),
     knowledge=knowledge,
     search_knowledge=True,
     add_history_to_context=True,

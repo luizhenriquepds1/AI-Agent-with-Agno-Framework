@@ -1,6 +1,7 @@
 from agno.agent import Agent
 from agno.tools.tavily import TavilyTools
-from agno.models.groq import Groq
+from agno.models.google import Gemini
+#from agno.models.groq import Groq
 #from agno.models.openai import OpenAIChat
 from dotenv import load_dotenv
 from agno.os import AgentOS
@@ -26,7 +27,8 @@ db = SqliteDb(db_file="tmp/agent.db", session_table="agent_session")
 
 agent = Agent(
     name="Agente do tempo",
-    model=Groq(id="openai/gpt-oss-120b"),
+    model=Gemini(id="gemini-3.8-flash"),
+    #model=Groq(id="openai/gpt-oss-120b"),
     #model=OpenAIChat(id="gpt-4.1-mini"),
     tools=[
         TavilyTools(),
